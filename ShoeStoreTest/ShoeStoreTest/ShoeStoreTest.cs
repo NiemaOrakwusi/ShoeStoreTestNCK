@@ -1,13 +1,12 @@
-﻿/*Selenium WebDriver Test Completed in C# By: Niema Kitt 
- On August 12, 2016 */
+/*Selenium WebDriver Test Completed in C# By: Niema Kitt 
+ On March 30, 2017 */
 
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Text;
+
 
 namespace ShoeStoreTest
 {
@@ -78,17 +77,21 @@ namespace ShoeStoreTest
              {
                  if (itemse == null)
                  {
-
+					
+					//Verify the item is displayed
                     Assert.IsTrue(itemse.Displayed);
-                   // MessageBox.Show("Null Price");
+					Console.WriteLine("Nothing Displayed");
+                    
+                   
 
 
                  }
                  else
                  {
-
+					
+                    //Verify the item is displayed
                     Assert.IsTrue(itemse.Displayed);
-                    //MessageBox.Show("Not Null Price\n" + itemse.Text.Trim());
+                    
 
                  }
              }
@@ -102,7 +105,7 @@ namespace ShoeStoreTest
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(60));
             IWebElement busd = driver.FindElement(By.Id("remind_email_input"));
 
-            busd.SendKeys("niemakitt@yahoo.com");
+            busd.SendKeys("testme@yahoo.com");
 
             driver.FindElement(By.XPath("//html//body//header//form[1]//div//input[2]")).Click();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(60));
